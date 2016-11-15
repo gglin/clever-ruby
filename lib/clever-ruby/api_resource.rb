@@ -144,7 +144,7 @@ module Clever
     # @return [String]
     def get_link_uri(resource_type)
       refresh if links.nil?
-      links[resource_type.to_sym]
+      links[resource_type.to_sym] || url + "/#{resource_type}"
     end
 
     # Construct an APIResource. Generates methods for nested resources
